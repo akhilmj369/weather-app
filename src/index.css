@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Premium color variables */
+  --primary-gradient: linear-gradient(135deg, #667eea, #764ba2);
+  --secondary-gradient: linear-gradient(135deg, #fc8181, #f56565);
+  --success-gradient: linear-gradient(135deg, #68d391, #48bb78);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-primary: 0 25px 50px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: 
+    linear-gradient(135deg, rgba(116, 185, 255, 0.1) 0%, rgba(9, 132, 227, 0.1) 100%),
+    url('https://images.unsplash.com/photo-1419833479618-c595710cb224?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Global premium animations */
+@keyframes fadeIn {
+  0% { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% { 
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% { 
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% { 
+    transform: scale(0.9);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes pulse {
+  0% { 
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  100% { 
+    filter: brightness(1.1);
+    transform: scale(1.02);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #1a202c;
+}
+
+::-moz-selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #1a202c;
+}
+
+/* Focus outline styling */
+*:focus {
+  outline: 2px solid rgba(102, 126, 234, 0.4);
+  outline-offset: 2px;
+}
